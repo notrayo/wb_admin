@@ -128,10 +128,10 @@ class _HomePageState extends State<HomePage> {
             const SizedBox(
               height: 40,
             ),
-            const Divider(
+            Divider(
               height: 1,
               thickness: 0.5,
-              color: Color.fromARGB(255, 73, 71, 71),
+              color: Colors.grey[300],
             ),
             const SizedBox(
               height: 35,
