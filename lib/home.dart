@@ -1,15 +1,74 @@
 import 'package:flutter/material.dart';
 import 'package:countup/countup.dart';
+import './analytics.dart';
+import './orders.dart';
+import './users.dart';
+import './drawer.dart';
 
-class HomePage extends StatelessWidget {
+import 'package:url_launcher/url_launcher.dart';
+
+class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
+
+  @override
+  State<HomePage> createState() => _HomePageState();
+}
+
+class _HomePageState extends State<HomePage> {
+  int _selectedPageIndex = 0;
+
+  void _selectedPage(int index) {
+    setState(() {
+      _selectedPageIndex = index;
+    });
+  }
+
+  //drawer config
+
+  void _selectScreenFromDrawer(String identifier) {
+    if (identifier == 'Home') {
+      Navigator.of(context).pop();
+      setState(() {
+        _selectedPageIndex = 0;
+      });
+      //favourites...
+    } else if (identifier == 'Users') {
+      Navigator.of(context).push(MaterialPageRoute(
+        builder: (context) => const UsersScreen(),
+      ));
+
+      //Cart
+    } else if (identifier == 'Orders') {
+      Navigator.of(context).push(MaterialPageRoute(
+        builder: (context) => const OrdersScreen(),
+      ));
+    } else if (identifier == 'Analytics') {
+      Navigator.of(context).push(MaterialPageRoute(
+        builder: (context) => const AnalyticsScreen(),
+      ));
+    } else {
+      Navigator.of(context).pop();
+    }
+    //set state
+    setState(() {});
+  }
+
+  //url launcher
+  final Uri _url = Uri.parse('https://087c-41-90-179-242.ngrok-free.app/');
+
+  Future<void> _launchUrl() async {
+    if (!await launchUrl(_url)) {
+      throw Exception('Could not launch $_url');
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         title: const Text('WARU BORA ADMIN PANEL'),
       ),
-      drawer: const Drawer(),
+      drawer: DrawerScreen(onSelectScreenFromDrawer: _selectScreenFromDrawer),
       body: SingleChildScrollView(
         child: Center(
             child: Column(
@@ -25,7 +84,12 @@ class HomePage extends StatelessWidget {
             const SizedBox(
               height: 25,
             ),
-            // Image.asset('assets/cropped-Organix-logo-edit.png'),
+            SizedBox(
+              height: 200,
+              child: FractionallySizedBox(
+                  heightFactor: 0.8,
+                  child: Image.asset('assets/cropped-Organix-logo-edit.png')),
+            ),
             const SizedBox(
               height: 25,
             ),
@@ -36,6 +100,41 @@ class HomePage extends StatelessWidget {
             ),
             const SizedBox(
               height: 25,
+            ),
+            Column(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: [
+                const Text(
+                  'TO VISIT MACHINE LEARNING SERVER FOR DIAGNOSIS, CLICK HERE',
+                  style: TextStyle(
+                    fontSize: 20,
+                    fontWeight: FontWeight.bold,
+                    color: Color.fromARGB(255, 38, 38, 38),
+                  ),
+                ),
+                const SizedBox(
+                  height: 25,
+                ),
+                ElevatedButton(
+                    onPressed: _launchUrl,
+                    style: ElevatedButton.styleFrom(
+                        backgroundColor: Colors.blue,
+                        minimumSize: const Size(
+                            300, 60) // Set the button's background color
+                        ),
+                    child: const Text('VISIT SERVER 2 PREDICT'))
+              ],
+            ),
+            const SizedBox(
+              height: 40,
+            ),
+            const Divider(
+              height: 1,
+              thickness: 0.5,
+              color: Color.fromARGB(255, 73, 71, 71),
+            ),
+            const SizedBox(
+              height: 35,
             ),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
