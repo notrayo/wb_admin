@@ -44,6 +44,27 @@ class DrawerScreen extends StatelessWidget {
 
           ListTile(
             leading: const Icon(
+              Icons.image_search,
+              size: 30,
+              color: Colors.black,
+            ),
+            title: Text(
+              'Diagnosis Requests',
+              style: Theme.of(context)
+                  .textTheme
+                  .titleMedium!
+                  .copyWith(color: Colors.black),
+            ),
+            onTap: () {
+              //control state
+
+              //close drawer
+              onSelectScreenFromDrawer('User-Uploads');
+            },
+          ),
+
+          ListTile(
+            leading: const Icon(
               Icons.account_circle,
               size: 30,
               color: Colors.black,
@@ -93,7 +114,7 @@ class DrawerScreen extends StatelessWidget {
               color: Colors.black,
             ),
             title: Text(
-              'Analytics',
+              'Data Analytics',
               style: Theme.of(context)
                   .textTheme
                   .titleMedium!

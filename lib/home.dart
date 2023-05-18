@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:countup/countup.dart';
+//import 'package:wb_admin/user_uploads.dart';
 import './analytics.dart';
 import './orders.dart';
 import './users.dart';
 import './drawer.dart';
+import './user_uploads.dart';
 
 import 'package:url_launcher/url_launcher.dart';
 
@@ -36,8 +38,11 @@ class _HomePageState extends State<HomePage> {
       Navigator.of(context).push(MaterialPageRoute(
         builder: (context) => const UsersScreen(),
       ));
-
       //Cart
+    } else if (identifier == 'User-Uploads') {
+      Navigator.of(context).push(MaterialPageRoute(
+        builder: (context) => const UserUploads(),
+      ));
     } else if (identifier == 'Orders') {
       Navigator.of(context).push(MaterialPageRoute(
         builder: (context) => const OrdersScreen(),
