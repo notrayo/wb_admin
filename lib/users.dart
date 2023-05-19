@@ -13,16 +13,22 @@ class UsersScreen extends StatefulWidget {
 
 class User {
   final String id;
-  final String name;
+  final String first_name;
+  final String last_name;
   final String email;
 
-  User({required this.id, required this.name, required this.email});
+  User(
+      {required this.id,
+      required this.first_name,
+      required this.last_name,
+      required this.email});
 
   factory User.fromSnapshot(DocumentSnapshot snapshot) {
     Map<String, dynamic> data = snapshot.data() as Map<String, dynamic>;
     return User(
       id: snapshot.id,
-      name: data['name'] ?? '',
+      first_name: data['first_name'] ?? '',
+      last_name: data['last_name'] ?? '',
       email: data['email'] ?? '',
     );
   }
@@ -62,14 +68,16 @@ class _UsersScreenState extends State<UsersScreen> {
             List<User> users = snapshot.data!;
             return DataTable(
               columns: const [
-                DataColumn(label: Text('ID')),
-                DataColumn(label: Text('Name')),
+                //DataColumn(label: Text('ID')),
+                DataColumn(label: Text('First Name')),
+                DataColumn(label: Text('Last Name')),
                 DataColumn(label: Text('Email')),
               ],
               rows: users.map((user) {
                 return DataRow(cells: [
-                  DataCell(Text(user.id)),
-                  DataCell(Text(user.name)),
+                  //DataCell(Text(user.id)),
+                  DataCell(Text(user.first_name)),
+                  DataCell(Text(user.last_name)),
                   DataCell(Text(user.email)),
                 ]);
               }).toList(),
