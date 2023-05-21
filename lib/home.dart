@@ -1,17 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:countup/countup.dart';
-import 'package:wb_admin/diagnosis_analytics.dart';
-import 'package:wb_admin/diagnosis_results.dart';
-import 'package:wb_admin/inv_mgmt.dart';
-import 'package:wb_admin/inv_report.dart';
-import 'package:wb_admin/payment_mgmt.dart';
-import 'package:wb_admin/payment_report.dart';
+import 'package:wb_admin/analytics/diagnosis_analytics.dart';
+import 'package:wb_admin/forms/diagnosis_results.dart';
+import 'package:wb_admin/forms/inv_mgmt.dart';
+import 'package:wb_admin/reports/inv_report.dart';
+import 'package:wb_admin/forms/payment_mgmt.dart';
+import 'package:wb_admin/reports/payment_report.dart';
 //import 'package:wb_admin/user_uploads.dart';
-import './analytics.dart';
-import './orders.dart';
-import './users.dart';
+import './analytics/analytics.dart';
+import 'reports/orders.dart';
+import 'reports/users.dart';
 import './drawer.dart';
-import 'diagnosis_requests.dart';
+import 'reports/diagnosis_requests.dart';
 
 import 'package:url_launcher/url_launcher.dart';
 

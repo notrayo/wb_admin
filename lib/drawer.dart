@@ -60,7 +60,7 @@ class DrawerScreen extends StatelessWidget {
               color: Colors.black,
             ),
             title: Text(
-              'Diagnosis Results',
+              'Update Diagnosis',
               style: Theme.of(context)
                   .textTheme
                   .titleMedium!
@@ -177,7 +177,7 @@ class DrawerScreen extends StatelessWidget {
               color: Colors.black,
             ),
             title: Text(
-              'Diagnosis Requests',
+              'User Requests',
               style: Theme.of(context)
                   .textTheme
                   .titleMedium!
