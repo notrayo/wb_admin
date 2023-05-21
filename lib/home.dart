@@ -1,11 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:countup/countup.dart';
+import 'package:wb_admin/diagnosis_analytics.dart';
+import 'package:wb_admin/diagnosis_results.dart';
+import 'package:wb_admin/inv_mgmt.dart';
+import 'package:wb_admin/inv_report.dart';
+import 'package:wb_admin/payment_mgmt.dart';
+import 'package:wb_admin/payment_report.dart';
 //import 'package:wb_admin/user_uploads.dart';
 import './analytics.dart';
 import './orders.dart';
 import './users.dart';
 import './drawer.dart';
-import './user_uploads.dart';
+import 'diagnosis_requests.dart';
 
 import 'package:url_launcher/url_launcher.dart';
 
@@ -50,6 +56,30 @@ class _HomePageState extends State<HomePage> {
     } else if (identifier == 'Analytics') {
       Navigator.of(context).push(MaterialPageRoute(
         builder: (context) => const AnalyticsScreen(),
+      ));
+    } else if (identifier == 'DiagnosisResults') {
+      Navigator.of(context).push(MaterialPageRoute(
+        builder: (context) => const DiagnosisResultsScreen(),
+      ));
+    } else if (identifier == 'DiagnosisAnalytics') {
+      Navigator.of(context).push(MaterialPageRoute(
+        builder: (context) => const DiagnosisAnalyticsScreen(),
+      ));
+    } else if (identifier == 'InventoryMGMT') {
+      Navigator.of(context).push(MaterialPageRoute(
+        builder: (context) => const InventoryManagementScreen(),
+      ));
+    } else if (identifier == 'InventoryReport') {
+      Navigator.of(context).push(MaterialPageRoute(
+        builder: (context) => const InventoryReportScreen(),
+      ));
+    } else if (identifier == 'PaymentMGMT') {
+      Navigator.of(context).push(MaterialPageRoute(
+        builder: (context) => const PaymentManagementScreen(),
+      ));
+    } else if (identifier == 'PaymentReport') {
+      Navigator.of(context).push(MaterialPageRoute(
+        builder: (context) => const PaymentsReportScreen(),
       ));
     } else {
       Navigator.of(context).pop();

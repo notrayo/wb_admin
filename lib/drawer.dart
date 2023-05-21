@@ -31,7 +31,7 @@ class DrawerScreen extends StatelessWidget {
                   width: 25,
                 ),
                 Text(
-                  'WB DASHBOARD ',
+                  'DASHBOARD ',
                   style: Theme.of(context)
                       .textTheme
                       .titleLarge!
@@ -40,16 +40,27 @@ class DrawerScreen extends StatelessWidget {
               ],
             ),
           ),
+          const SizedBox(
+            height: 15,
+          ),
           //add content to drawer
-
+          ListTile(
+            title: Text(
+              '---- MANAGEMENT FORMS -----',
+              style: Theme.of(context)
+                  .textTheme
+                  .titleMedium!
+                  .copyWith(fontWeight: FontWeight.bold, fontSize: 18),
+            ),
+          ),
           ListTile(
             leading: const Icon(
-              Icons.image_search,
+              Icons.medication,
               size: 30,
               color: Colors.black,
             ),
             title: Text(
-              'Diagnosis Requests',
+              'Diagnosis Results',
               style: Theme.of(context)
                   .textTheme
                   .titleMedium!
@@ -59,8 +70,62 @@ class DrawerScreen extends StatelessWidget {
               //control state
 
               //close drawer
-              onSelectScreenFromDrawer('User-Uploads');
+              onSelectScreenFromDrawer('DiagnosisResults');
             },
+          ),
+          ListTile(
+            leading: const Icon(
+              Icons.inventory,
+              size: 30,
+              color: Colors.black,
+            ),
+            title: Text(
+              'Manage Inventory',
+              style: Theme.of(context)
+                  .textTheme
+                  .titleMedium!
+                  .copyWith(color: Colors.black),
+            ),
+            onTap: () {
+              //control state
+
+              //close drawer
+              onSelectScreenFromDrawer('InventoryMGMT');
+            },
+          ),
+          ListTile(
+            leading: const Icon(
+              Icons.payment_rounded,
+              size: 30,
+              color: Colors.black,
+            ),
+            title: Text(
+              'Manage Payments',
+              style: Theme.of(context)
+                  .textTheme
+                  .titleMedium!
+                  .copyWith(color: Colors.black),
+            ),
+            onTap: () {
+              //control state
+
+              //close drawer
+              onSelectScreenFromDrawer('PaymentMGMT');
+            },
+          ),
+
+          const SizedBox(
+            height: 30,
+          ),
+          //add content to drawer
+          ListTile(
+            title: Text(
+              '---------- REPORTS -----------',
+              style: Theme.of(context)
+                  .textTheme
+                  .titleMedium!
+                  .copyWith(fontWeight: FontWeight.bold, fontSize: 18),
+            ),
           ),
 
           ListTile(
@@ -81,6 +146,48 @@ class DrawerScreen extends StatelessWidget {
 
               //close drawer
               onSelectScreenFromDrawer('Users');
+            },
+          ),
+
+          ListTile(
+            leading: const Icon(
+              Icons.inventory_outlined,
+              size: 30,
+              color: Colors.black,
+            ),
+            title: Text(
+              'Inventory Report',
+              style: Theme.of(context)
+                  .textTheme
+                  .titleMedium!
+                  .copyWith(color: Colors.black),
+            ),
+            onTap: () {
+              //control state
+
+              //close drawer
+              onSelectScreenFromDrawer('InventoryReport');
+            },
+          ),
+
+          ListTile(
+            leading: const Icon(
+              Icons.image_search,
+              size: 30,
+              color: Colors.black,
+            ),
+            title: Text(
+              'Diagnosis Requests',
+              style: Theme.of(context)
+                  .textTheme
+                  .titleMedium!
+                  .copyWith(color: Colors.black),
+            ),
+            onTap: () {
+              //control state
+
+              //close drawer
+              onSelectScreenFromDrawer('User-Uploads');
             },
           ),
 
@@ -105,6 +212,59 @@ class DrawerScreen extends StatelessWidget {
 
               //close drawer
               //Navigator.pop(context);
+            },
+          ),
+          ListTile(
+            leading: const Icon(
+              Icons.payments,
+              size: 30,
+              color: Colors.black,
+            ),
+            title: Text(
+              'Complete Payments',
+              style: Theme.of(context)
+                  .textTheme
+                  .titleMedium!
+                  .copyWith(color: Colors.black),
+            ),
+            onTap: () {
+              //control state
+
+              //close drawer
+              onSelectScreenFromDrawer('PaymentReport');
+            },
+          ),
+          const SizedBox(
+            height: 30,
+          ),
+          //add content to drawer
+          ListTile(
+            title: Text(
+              '---------- ANALYTICS -----------',
+              style: Theme.of(context)
+                  .textTheme
+                  .titleMedium!
+                  .copyWith(fontWeight: FontWeight.bold, fontSize: 18),
+            ),
+          ),
+          ListTile(
+            leading: const Icon(
+              Icons.pie_chart_outline_outlined,
+              size: 30,
+              color: Colors.black,
+            ),
+            title: Text(
+              'Diagnosis Analytics',
+              style: Theme.of(context)
+                  .textTheme
+                  .titleMedium!
+                  .copyWith(color: Colors.black),
+            ),
+            onTap: () {
+              //control state
+
+              //close drawer
+              onSelectScreenFromDrawer('DiagnosisAnalytics');
             },
           ),
           ListTile(
