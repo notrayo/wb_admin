@@ -69,9 +69,18 @@ class _UsersScreenState extends State<UsersScreen> {
             return DataTable(
               columns: const [
                 //DataColumn(label: Text('ID')),
-                DataColumn(label: Text('First Name')),
-                DataColumn(label: Text('Last Name')),
-                DataColumn(label: Text('Email')),
+                DataColumn(
+                    label: Text('First Name',
+                        style: TextStyle(
+                            fontWeight: FontWeight.bold, fontSize: 15))),
+                DataColumn(
+                    label: Text('Last Name',
+                        style: TextStyle(
+                            fontWeight: FontWeight.bold, fontSize: 15))),
+                DataColumn(
+                    label: Text('Email',
+                        style: TextStyle(
+                            fontWeight: FontWeight.bold, fontSize: 15))),
               ],
               rows: users.map((user) {
                 return DataRow(cells: [
