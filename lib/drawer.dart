@@ -135,7 +135,7 @@ class DrawerScreen extends StatelessWidget {
               color: Colors.black,
             ),
             title: Text(
-              'Users',
+              'Authenticated Farmers',
               style: Theme.of(context)
                   .textTheme
                   .titleMedium!
@@ -177,7 +177,7 @@ class DrawerScreen extends StatelessWidget {
               color: Colors.black,
             ),
             title: Text(
-              'User Requests',
+              'Diagnosis Requests',
               style: Theme.of(context)
                   .textTheme
                   .titleMedium!

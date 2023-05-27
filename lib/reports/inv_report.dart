@@ -124,9 +124,13 @@ class _InventoryReportScreenState extends State<InventoryReportScreen> {
           ],
           rows: items.map((item) {
             return DataRow(cells: [
-              DataCell(Text(item.title)),
-              DataCell(Text(item.price.toString())),
-              DataCell(Text(item.type)),
+              DataCell(Text(
+                item.title,
+                style: const TextStyle(fontSize: 17),
+              )),
+              DataCell(Text(item.price.toString(),
+                  style: const TextStyle(fontSize: 17))),
+              DataCell(Text(item.type, style: const TextStyle(fontSize: 17))),
               // Add more cells as necessary
             ]);
           }).toList(),
@@ -135,4 +139,5 @@ class _InventoryReportScreenState extends State<InventoryReportScreen> {
       ],
     );
   }
+  
 }

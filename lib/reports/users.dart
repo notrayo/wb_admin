@@ -16,12 +16,14 @@ class User {
   final String first_name;
   final String last_name;
   final String email;
+  final String phoneNumber;
 
   User(
       {required this.id,
       required this.first_name,
       required this.last_name,
-      required this.email});
+      required this.email,
+      required this.phoneNumber});
 
   factory User.fromSnapshot(DocumentSnapshot snapshot) {
     Map<String, dynamic> data = snapshot.data() as Map<String, dynamic>;
@@ -30,6 +32,7 @@ class User {
       first_name: data['first_name'] ?? '',
       last_name: data['last_name'] ?? '',
       email: data['email'] ?? '',
+      phoneNumber: data['phoneNumber'] ?? '',
     );
   }
 }
@@ -81,13 +84,22 @@ class _UsersScreenState extends State<UsersScreen> {
                     label: Text('Email',
                         style: TextStyle(
                             fontWeight: FontWeight.bold, fontSize: 15))),
+                DataColumn(
+                    label: Text('Phone Number',
+                        style: TextStyle(
+                            fontWeight: FontWeight.bold, fontSize: 15))),
               ],
               rows: users.map((user) {
                 return DataRow(cells: [
                   //DataCell(Text(user.id)),
-                  DataCell(Text(user.first_name)),
-                  DataCell(Text(user.last_name)),
-                  DataCell(Text(user.email)),
+                  DataCell(Text(user.first_name,
+                      style: const TextStyle(fontSize: 17))),
+                  DataCell(Text(user.last_name,
+                      style: const TextStyle(fontSize: 17))),
+                  DataCell(
+                      Text(user.email, style: const TextStyle(fontSize: 17))),
+                  DataCell(Text(user.phoneNumber,
+                      style: const TextStyle(fontSize: 17))),
                 ]);
               }).toList(),
             );
