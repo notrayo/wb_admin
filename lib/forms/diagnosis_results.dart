@@ -89,7 +89,7 @@ class _DiagnosisResultsScreenState extends State<DiagnosisResultsScreen> {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               const Text(
-                'Update the results of the diagnosis you did for the farmer request:',
+                'Update the results of the diagnosis you got from our Flask Machine Learning Server for the farmers images :',
                 style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
               ),
               const SizedBox(height: 35),
