@@ -15,6 +15,7 @@ class OrderItem {
   final double totalPrice;
   final Timestamp orderDate;
   final String phoneNumber;
+  bool orderState;
 
   OrderItem({
     required this.email,
@@ -22,6 +23,7 @@ class OrderItem {
     required this.totalPrice,
     required this.orderDate,
     required this.phoneNumber,
+    this.orderState = false,
   });
 
   factory OrderItem.fromSnapshot(DocumentSnapshot snapshot) {
@@ -32,6 +34,7 @@ class OrderItem {
       totalPrice: data['totalPrice'] ?? 0.0,
       orderDate: data['orderDate'] ?? Timestamp.now(),
       phoneNumber: data['phoneNumber'] ?? '',
+      orderState: data['orderState'] ?? false,
     );
   }
 }
@@ -52,6 +55,13 @@ class _OrdersScreenState extends State<OrdersScreen> {
     });
 
     return orderItems;
+  }
+
+  Future<void> updateOrderState(String orderId) async {
+    await _firestore
+        .collection('orders')
+        .doc(orderId)
+        .update({'orderState': true});
   }
 
   @override
