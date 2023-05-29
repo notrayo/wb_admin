@@ -100,7 +100,7 @@ class DrawerScreen extends StatelessWidget {
               color: Colors.black,
             ),
             title: Text(
-              'Manage Payments',
+              'Update Payments',
               style: Theme.of(context)
                   .textTheme
                   .titleMedium!

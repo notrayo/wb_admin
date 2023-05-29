@@ -5,11 +5,10 @@ class PaymentManagementScreen extends StatefulWidget {
   const PaymentManagementScreen({Key? key}) : super(key: key);
 
   @override
-  _PaymentManagementScreenState createState() =>
-      _PaymentManagementScreenState();
+  PaymentManagementScreenState createState() => PaymentManagementScreenState();
 }
 
-class _PaymentManagementScreenState extends State<PaymentManagementScreen> {
+class PaymentManagementScreenState extends State<PaymentManagementScreen> {
   int _selectedIndex = 0; // Track the selected section index
 
   final List<Widget> _sections = [
@@ -55,10 +54,10 @@ class MpesaPaymentSection extends StatefulWidget {
   const MpesaPaymentSection({Key? key}) : super(key: key);
 
   @override
-  _MpesaPaymentSectionState createState() => _MpesaPaymentSectionState();
+  MpesaPaymentSectionState createState() => MpesaPaymentSectionState();
 }
 
-class _MpesaPaymentSectionState extends State<MpesaPaymentSection> {
+class MpesaPaymentSectionState extends State<MpesaPaymentSection> {
   final _formKey = GlobalKey<FormState>();
   String? _selectedEmail;
   List<String> _availableEmails = [];
@@ -200,7 +199,7 @@ class _MpesaPaymentSectionState extends State<MpesaPaymentSection> {
               ElevatedButton(
                 style: ButtonStyle(
                   backgroundColor: MaterialStateProperty.all<Color>(
-                      const Color.fromARGB(255, 3, 98, 11)!),
+                      const Color.fromARGB(255, 3, 98, 11)),
                 ),
                 onPressed: _submitMpesaForm,
                 child: const Text('Submit'),
@@ -217,10 +216,10 @@ class CashPaymentSection extends StatefulWidget {
   const CashPaymentSection({Key? key}) : super(key: key);
 
   @override
-  _CashPaymentSectionState createState() => _CashPaymentSectionState();
+  CashPaymentSectionState createState() => CashPaymentSectionState();
 }
 
-class _CashPaymentSectionState extends State<CashPaymentSection> {
+class CashPaymentSectionState extends State<CashPaymentSection> {
   final _formKey = GlobalKey<FormState>();
   String? _selectedEmail;
   List<String> _availableEmails = [];
