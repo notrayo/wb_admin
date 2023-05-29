@@ -17,23 +17,25 @@ class User {
   final String last_name;
   final String email;
   final String phoneNumber;
+  final String county;
 
   User(
       {required this.id,
       required this.first_name,
       required this.last_name,
       required this.email,
-      required this.phoneNumber});
+      required this.phoneNumber,
+      required this.county});
 
   factory User.fromSnapshot(DocumentSnapshot snapshot) {
     Map<String, dynamic> data = snapshot.data() as Map<String, dynamic>;
     return User(
-      id: snapshot.id,
-      first_name: data['first_name'] ?? '',
-      last_name: data['last_name'] ?? '',
-      email: data['email'] ?? '',
-      phoneNumber: data['phoneNumber'] ?? '',
-    );
+        id: snapshot.id,
+        first_name: data['first_name'] ?? '',
+        last_name: data['last_name'] ?? '',
+        email: data['email'] ?? '',
+        phoneNumber: data['phoneNumber'] ?? '',
+        county: data['county'] ?? '');
   }
 }
 
@@ -88,6 +90,10 @@ class _UsersScreenState extends State<UsersScreen> {
                     label: Text('Phone Number',
                         style: TextStyle(
                             fontWeight: FontWeight.bold, fontSize: 15))),
+                DataColumn(
+                    label: Text('County',
+                        style: TextStyle(
+                            fontWeight: FontWeight.bold, fontSize: 15))),
               ],
               rows: users.map((user) {
                 return DataRow(cells: [
@@ -100,6 +106,8 @@ class _UsersScreenState extends State<UsersScreen> {
                       Text(user.email, style: const TextStyle(fontSize: 17))),
                   DataCell(Text(user.phoneNumber,
                       style: const TextStyle(fontSize: 17))),
+                  DataCell(
+                      Text(user.county, style: const TextStyle(fontSize: 17))),
                 ]);
               }).toList(),
             );
