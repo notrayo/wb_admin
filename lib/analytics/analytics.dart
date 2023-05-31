@@ -12,15 +12,17 @@ class AnalyticsScreen extends StatefulWidget {
 class _AnalyticsScreenState extends State<AnalyticsScreen> {
 // data
   Map<String, double> dawaDataMap = {
-    "Pesticide": 160,
-    "Insectside": 80,
-    "Fertelizer": 22,
+    "Pesticide": 15,
+    "Insectside": 8,
+    "Fertelizer": 5,
+    "Nematicide": 3
   };
 
   List<Color> colorList = [
     const Color(0xffD95AF3),
     const Color(0xff3EE094),
     const Color(0xff3398F6),
+    const Color.fromARGB(255, 246, 51, 51),
   ];
 
   final gradientList = <List<Color>>[
@@ -39,13 +41,13 @@ class _AnalyticsScreenState extends State<AnalyticsScreen> {
   ];
 
   Map<String, double> plantsDataMap = {
-    "Maize": 160,
-    "Sorghum": 80,
-    "Wheat": 50,
-    "Potatoes": 22,
-    "Tomatoes": 10,
-    "Rice": 3,
-    "Mangoes": 1
+    "Nairobi": 5,
+    "Kiambu": 4,
+    "Murang'a": 2,
+    "Kirinyaga": 2,
+    "Nanyuki": 1,
+    "Meru": 1,
+    "Kericho": 1
   };
 
   List<Color> plantsColorList = [
@@ -62,7 +64,7 @@ class _AnalyticsScreenState extends State<AnalyticsScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Organix Agrovet Data Analytics'),
+        title: const Text('Waru Bora Data Analytics '),
       ),
       body: SafeArea(
         child: SingleChildScrollView(
@@ -71,7 +73,7 @@ class _AnalyticsScreenState extends State<AnalyticsScreen> {
               children: [
                 const SizedBox(height: 26),
                 const Text(
-                  'MOST POPULAR MEDICINE TYPES PIE CHART',
+                  'MOST POPULAR MEDICINE TYPES ',
                   style: TextStyle(
                     fontWeight: FontWeight.bold,
                     fontSize: 20,
@@ -110,26 +112,15 @@ class _AnalyticsScreenState extends State<AnalyticsScreen> {
                   height: 60,
                 ),
                 Divider(
-                  height: 1,
+                  height: 0.5,
                   thickness: 0.5,
                   color: Colors.grey[300],
                 ),
                 const SizedBox(
-                  height: 35,
-                ),
-                const SizedBox(
-                  height: 60,
-                ),
-                Divider(
-                  height: 1,
-                  thickness: 0.5,
-                  color: Colors.grey[300],
-                ),
-                const SizedBox(
-                  height: 35,
+                  height: 55,
                 ),
                 const Text(
-                  'MOST POPULAR TREATED PLANTS PIE CHART ',
+                  'MOST POPULAR FARMER LOCATIONS ',
                   style: TextStyle(
                     fontWeight: FontWeight.bold,
                     fontSize: 20,
@@ -164,6 +155,9 @@ class _AnalyticsScreenState extends State<AnalyticsScreen> {
 
                   gradientList: gradientList,
                 ),
+                const SizedBox(
+                  height: 30,
+                )
               ],
             ),
           ),

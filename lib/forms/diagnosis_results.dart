@@ -163,15 +163,18 @@ class _DiagnosisResultsScreenState extends State<DiagnosisResultsScreen> {
                 label: '${_selectedPercentage.round()}',
               ),
               const SizedBox(height: 30),
-              ElevatedButton(
-                onPressed: _submitForm,
-                style: ButtonStyle(
-                  backgroundColor:
-                      MaterialStateProperty.all<Color>(Colors.blue[900]!),
-                  minimumSize: MaterialStateProperty.all<Size>(
-                      const Size(double.infinity, 50)),
+              SizedBox(
+                width: 350,
+                child: ElevatedButton(
+                  onPressed: _submitForm,
+                  style: ButtonStyle(
+                    backgroundColor:
+                        MaterialStateProperty.all<Color>(Colors.blue[900]!),
+                    minimumSize: MaterialStateProperty.all<Size>(
+                        const Size(double.infinity, 50)),
+                  ),
+                  child: const Text('Submit to Database'),
                 ),
-                child: const Text('Submit to Database'),
               ),
             ],
           ),
