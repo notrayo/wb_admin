@@ -249,12 +249,12 @@ class DrawerScreen extends StatelessWidget {
           ),
           ListTile(
             leading: const Icon(
-              Icons.pie_chart_outline_outlined,
+              Icons.trending_up,
               size: 30,
               color: Colors.black,
             ),
             title: Text(
-              'Diagnosis Analytics',
+              'WB Statistics',
               style: Theme.of(context)
                   .textTheme
                   .titleMedium!
@@ -269,7 +269,7 @@ class DrawerScreen extends StatelessWidget {
           ),
           ListTile(
             leading: const Icon(
-              Icons.trending_up,
+              Icons.pie_chart_sharp,
               size: 30,
               color: Colors.black,
             ),
@@ -288,6 +288,27 @@ class DrawerScreen extends StatelessWidget {
               // Navigator.pop(context);
             },
           ),
+          // ListTile(
+          //   leading: const Icon(
+          //     Icons.temple_buddhist,
+          //     size: 30,
+          //     color: Colors.black,
+          //   ),
+          //   title: Text(
+          //     'testing',
+          //     style: Theme.of(context)
+          //         .textTheme
+          //         .titleMedium!
+          //         .copyWith(color: Colors.black),
+          //   ),
+          //   onTap: () {
+          //     //control state
+          //     onSelectScreenFromDrawer('test');
+
+          //     //close drawer
+          //     // Navigator.pop(context);
+          //   },
+          // ),
         ],
       ),
     );

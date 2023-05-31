@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:countup/countup.dart';
-import 'package:wb_admin/analytics/diagnosis_analytics.dart';
+import 'package:wb_admin/analytics/statistics.dart';
+import 'package:wb_admin/analytics/test.dart';
 import 'package:wb_admin/forms/diagnosis_results.dart';
 import 'package:wb_admin/forms/inv_mgmt.dart';
 import 'package:wb_admin/reports/inv_report.dart';
@@ -80,6 +81,10 @@ class _HomePageState extends State<HomePage> {
     } else if (identifier == 'PaymentReport') {
       Navigator.of(context).push(MaterialPageRoute(
         builder: (context) => const PaymentsReportScreen(),
+      ));
+    } else if (identifier == 'test') {
+      Navigator.of(context).push(MaterialPageRoute(
+        builder: (context) => const testStats(),
       ));
     } else {
       Navigator.of(context).pop();
