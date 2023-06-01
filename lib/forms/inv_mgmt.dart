@@ -215,7 +215,7 @@ class _InventoryManagementScreenState extends State<InventoryManagementScreen> {
                     child: const Text('Select Image'),
                   ),
                   const SizedBox(
-                    height: 20,
+                    height: 30,
                   ),
                   _imagePath != null
                       ? Image.file(
